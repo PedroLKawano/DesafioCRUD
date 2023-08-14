@@ -5,20 +5,43 @@ namespace DesafioCRUD.Repositories
 {
     public class ClienteRepository
     {
-        public IEnumerable<Cliente> ListarClientes()
+        public IEnumerable<ClienteGenero> ListarClientes(int? codigo, string? nome, int? idade, string? descricao)
         {
             try 
             {
                 using (var conexao = ConexaoSql.ObterConexao())
                 {
                     conexao.Open();
-                    return conexao.Query<Cliente>("SELECT Nome, Sobrenome, GeneroId, DataNascimento, Endereco, Numero, Cep, Bairro FROM [Cliente]");                    
+
+                    string consulta = @"SELECT c.ID, c.Nome, c.Sobrenome, g.Descricao AS DescricaoGenero, c.DataNascimento, c.Endereco, c.Numero, c.Cep, c.Bairro
+                    FROM [CLIENTE] C INNER JOIN [GENERO] G ON c.GeneroId = g.Id";
+
+                    if (codigo.HasValue)                    
+                        consulta += " WHERE c.ID = @Codigo";
+                    if (!string.IsNullOrEmpty(nome))
+                        consulta += " AND c.Nome + ' ' + c.Sobrenome LIKE @Nome";
+
+                    DateTime? dataMaxima = null;
+                    DateTime? dataMinima = null;
+
+                    if (idade.HasValue)
+                    {
+                        dataMaxima = DateTime.Now.AddYears(-idade.Value);
+                        dataMinima = dataMaxima.Value.AddYears(-1);
+                        //dataMinima = dataMaxima.AddYears(-1);
+                        consulta += " AND c.DataNascimento > @DataMinima AND c.DataNascimento <= @DataMaxima";
+                    } 
+                    
+                    if (!string.IsNullOrEmpty(descricao))
+                        consulta += " AND g.Descricao LIKE @Descricao";
+
+                    return conexao.Query<ClienteGenero>(consulta, new {Codigo = codigo, Nome = nome + '%', DataMaxima = dataMaxima, DataMinima = dataMinima, Descricao = descricao + '%'});
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                return Enumerable.Empty<Cliente>();
+                return Enumerable.Empty<ClienteGenero>();
             }
         }
     

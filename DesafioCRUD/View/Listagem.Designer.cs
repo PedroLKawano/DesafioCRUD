@@ -113,6 +113,7 @@
             // 
             // txtGenero
             // 
+            txtGenero.CharacterCasing = CharacterCasing.Upper;
             txtGenero.Location = new Point(84, 123);
             txtGenero.Name = "txtGenero";
             txtGenero.Size = new Size(227, 23);
@@ -126,6 +127,7 @@
             btnFiltrar.TabIndex = 9;
             btnFiltrar.Text = "Filtrar";
             btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.Click += btnFiltrar_Click;
             // 
             // btnSalvar
             // 
@@ -150,7 +152,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(723, 447);
+            ClientSize = new Size(730, 453);
             Controls.Add(btnEliminar);
             Controls.Add(btnSalvar);
             Controls.Add(btnFiltrar);
@@ -164,6 +166,7 @@
             Controls.Add(label1);
             Controls.Add(dgvDados);
             Name = "Listagem";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Listagem";
             ((System.ComponentModel.ISupportInitialize)dgvDados).EndInit();
             ResumeLayout(false);
