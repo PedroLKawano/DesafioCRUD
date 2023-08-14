@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DesafioCRUD.Models;
+using DesafioCRUD.Repositories;
 
 namespace DesafioCRUD.View
 {
     public partial class Cadastro : Form
     {
+
         public Cadastro()
         {
             InitializeComponent();
@@ -27,6 +21,25 @@ namespace DesafioCRUD.View
             var form = new Listagem();
 
             form.ShowDialog();
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            new GeneroRepository().CadastrarGenero(txtGenero.Text);
+            var generoId = new GeneroRepository().BuscarGeneroId(txtGenero.Text);
+            var novoCadastro = new Cliente
+            {
+                Nome = txtNome.Text,
+                Sobrenome = txtSobrenome.Text,
+                GeneroId = generoId,
+                DataNascimento = dtpNascimento.Value,
+                Endereco = txtEndereco.Text,
+                Numero = txtNumero.Text,
+                Cep = mtbCep.Text,
+                Bairro = txtBairro.Text,
+            };
+
+            new ClienteRepository().CadastrarCliente(novoCadastro);
         }
     }
 }

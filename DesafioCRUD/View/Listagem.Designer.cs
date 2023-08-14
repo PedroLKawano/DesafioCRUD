@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
+            dgvDados = new DataGridView();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            txtCod = new TextBox();
+            txtNome = new TextBox();
+            txtIdade = new TextBox();
+            txtGenero = new TextBox();
             btnFiltrar = new Button();
             btnSalvar = new Button();
             btnEliminar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvDados
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(33, 170);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(666, 206);
-            dataGridView1.TabIndex = 0;
+            dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvDados.Location = new Point(33, 170);
+            dgvDados.Name = "dgvDados";
+            dgvDados.RowTemplate.Height = 25;
+            dgvDados.Size = new Size(666, 206);
+            dgvDados.TabIndex = 0;
             // 
             // label1
             // 
@@ -89,34 +89,34 @@
             label4.TabIndex = 4;
             label4.Text = "Gênero";
             // 
-            // textBox1
+            // txtCod
             // 
-            textBox1.Location = new Point(84, 37);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(77, 23);
-            textBox1.TabIndex = 5;
+            txtCod.Location = new Point(84, 37);
+            txtCod.Name = "txtCod";
+            txtCod.Size = new Size(77, 23);
+            txtCod.TabIndex = 5;
             // 
-            // textBox2
+            // txtNome
             // 
-            textBox2.CharacterCasing = CharacterCasing.Upper;
-            textBox2.Location = new Point(84, 64);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(227, 23);
-            textBox2.TabIndex = 6;
+            txtNome.CharacterCasing = CharacterCasing.Upper;
+            txtNome.Location = new Point(84, 64);
+            txtNome.Name = "txtNome";
+            txtNome.Size = new Size(227, 23);
+            txtNome.TabIndex = 6;
             // 
-            // textBox3
+            // txtIdade
             // 
-            textBox3.Location = new Point(84, 93);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(77, 23);
-            textBox3.TabIndex = 7;
+            txtIdade.Location = new Point(84, 93);
+            txtIdade.Name = "txtIdade";
+            txtIdade.Size = new Size(77, 23);
+            txtIdade.TabIndex = 7;
             // 
-            // textBox4
+            // txtGenero
             // 
-            textBox4.Location = new Point(84, 123);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(227, 23);
-            textBox4.TabIndex = 8;
+            txtGenero.Location = new Point(84, 123);
+            txtGenero.Name = "txtGenero";
+            txtGenero.Size = new Size(227, 23);
+            txtGenero.TabIndex = 8;
             // 
             // btnFiltrar
             // 
@@ -154,33 +154,33 @@
             Controls.Add(btnEliminar);
             Controls.Add(btnSalvar);
             Controls.Add(btnFiltrar);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtGenero);
+            Controls.Add(txtIdade);
+            Controls.Add(txtNome);
+            Controls.Add(txtCod);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvDados);
             Name = "Listagem";
             Text = "Listagem";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvDados).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
+        private DataGridView dgvDados;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox txtCod;
+        private TextBox txtNome;
+        private TextBox txtIdade;
+        private TextBox txtGenero;
         private Button btnFiltrar;
         private Button btnSalvar;
         private Button btnEliminar;
