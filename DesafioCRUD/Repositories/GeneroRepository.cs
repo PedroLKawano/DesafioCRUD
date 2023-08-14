@@ -20,8 +20,8 @@ namespace DesafioCRUD.Repositories
                 conexao.Open();
                 var generoId = conexao.QueryFirstOrDefault<int>("SELECT Id FROM [Genero] WHERE Descricao = @Descricao", new { Descricao = descricao });
 
-                if(generoId == 0)
-                    conexao.QueryFirstOrDefault<int>("SELECT Id FROM [Genero] WHERE Descricao = @Descricao", new { Descricao = descricao });                
+                if (generoId == 0)
+                    conexao.Execute("INSERT INTO [Genero] (Descricao) VALUES (@Descricao)", new {Descricao = descricao});             
             }
         }
     }

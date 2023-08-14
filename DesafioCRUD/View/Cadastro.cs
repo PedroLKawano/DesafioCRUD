@@ -1,5 +1,6 @@
 ﻿using DesafioCRUD.Models;
 using DesafioCRUD.Repositories;
+using System.Drawing.Text;
 
 namespace DesafioCRUD.View
 {
@@ -40,6 +41,20 @@ namespace DesafioCRUD.View
             };
 
             new ClienteRepository().CadastrarCliente(novoCadastro);
+
+            LimparCampos();
+        }
+
+        private void LimparCampos()
+        {
+            txtNome.Text = string.Empty;
+            txtSobrenome.Text = string.Empty;
+            txtGenero.Text = string.Empty;
+            dtpNascimento.Value = DateTime.Now;
+            txtEndereco.Text = string.Empty;
+            txtNumero.Text = string.Empty;
+            mtbCep.Text = string.Empty;
+            txtBairro.Text = string.Empty;
         }
     }
 }
