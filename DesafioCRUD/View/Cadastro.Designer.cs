@@ -228,6 +228,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
             Load += Cadastro_Load;
             ResumeLayout(false);

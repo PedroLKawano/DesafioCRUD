@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using DesafioCRUD.Repositories;
 
 namespace DesafioCRUD.View
 {
@@ -15,6 +7,17 @@ namespace DesafioCRUD.View
         public Listagem()
         {
             InitializeComponent();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            int? codigo = string.IsNullOrEmpty(txtCod.Text) ? (int?)null : int.Parse(txtCod.Text);
+            string? nome = string.IsNullOrEmpty(txtNome.Text) ? (string?)null : txtNome.Text;
+            string? genero = string.IsNullOrEmpty(txtGenero.Text) ? (string?)null : txtGenero.Text;
+            int? idade = string.IsNullOrEmpty(txtIdade.Text) ? (int?)null : int.Parse(txtIdade.Text);
+
+            var clientes = new ClienteRepository().ListarClientes(codigo, nome, idade, genero);
+            dgvDados.DataSource = clientes;
         }
     }
 }

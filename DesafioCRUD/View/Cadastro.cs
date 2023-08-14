@@ -1,6 +1,5 @@
 ﻿using DesafioCRUD.Models;
 using DesafioCRUD.Repositories;
-using System.Drawing.Text;
 
 namespace DesafioCRUD.View
 {
