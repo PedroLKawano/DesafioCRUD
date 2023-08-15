@@ -1,4 +1,6 @@
-﻿using DesafioCRUD.Repositories;
+﻿using DesafioCRUD.Models;
+using DesafioCRUD.Repositories;
+using System.Runtime.ConstrainedExecution;
 
 namespace DesafioCRUD.View
 {
@@ -18,6 +20,29 @@ namespace DesafioCRUD.View
 
             var clientes = new ClienteRepository().ListarClientes(codigo, nome, idade, genero);
             dgvDados.DataSource = clientes;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {            
+            if (dgvDados.SelectedRows.Count > 0)
+            {                
+                var dadosCliente = dgvDados.SelectedRows[0].DataBoundItem as ClienteGenero;
+                var dadosCadastro = new Cadastro();
+
+                dadosCadastro.EditarCadastro(
+                    dadosCliente.Id,
+                    dadosCliente.Nome,
+                    dadosCliente.Sobrenome,
+                    dadosCliente.DescricaoGenero,
+                    dadosCliente.DataNascimento,
+                    dadosCliente.Endereco,
+                    dadosCliente.Numero,
+                    dadosCliente.Cep,
+                    dadosCliente.Bairro
+                    );
+                
+                dadosCadastro.ShowDialog();                
+            }
         }
     }
 }

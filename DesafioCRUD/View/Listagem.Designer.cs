@@ -38,7 +38,7 @@
             txtIdade = new TextBox();
             txtGenero = new TextBox();
             btnFiltrar = new Button();
-            btnSalvar = new Button();
+            btnEditar = new Button();
             btnEliminar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
             SuspendLayout();
@@ -129,19 +129,19 @@
             btnFiltrar.UseVisualStyleBackColor = true;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
-            // btnSalvar
+            // btnEditar
             // 
-            btnSalvar.Location = new Point(604, 396);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(95, 35);
-            btnSalvar.TabIndex = 10;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Visible = false;
+            btnEditar.Location = new Point(33, 396);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Size = new Size(95, 35);
+            btnEditar.TabIndex = 10;
+            btnEditar.Text = "Editar";
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(33, 396);
+            btnEliminar.Location = new Point(604, 396);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(95, 35);
             btnEliminar.TabIndex = 11;
@@ -154,7 +154,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(730, 453);
             Controls.Add(btnEliminar);
-            Controls.Add(btnSalvar);
+            Controls.Add(btnEditar);
             Controls.Add(btnFiltrar);
             Controls.Add(txtGenero);
             Controls.Add(txtIdade);
@@ -185,7 +185,7 @@
         private TextBox txtIdade;
         private TextBox txtGenero;
         private Button btnFiltrar;
-        private Button btnSalvar;
+        private Button btnEditar;
         private Button btnEliminar;
     }
 }

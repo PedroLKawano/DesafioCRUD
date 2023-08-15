@@ -1,14 +1,35 @@
-﻿using DesafioCRUD.Models;
+﻿using Dapper;
+using DesafioCRUD.Models;
 using DesafioCRUD.Repositories;
+using Microsoft.Data.SqlClient;
 
 namespace DesafioCRUD.View
 {
     public partial class Cadastro : Form
     {
-
         public Cadastro()
         {
             InitializeComponent();
+        }
+
+        public void EditarCadastro(int id, string nome, string sobrenome, string descricaoGenero, DateTime dataNascimento, string endereco, string numero, string cep, string bairro)
+        {
+            this.Text = "Edição";
+            lblCod.Visible = true;
+            txtCod.Visible = true;
+            btnListagem.Visible = false;
+            btnCadastrar.Visible = false;
+            btnSalvar.Visible = true;
+
+            txtCod.Text = id.ToString();
+            txtNome.Text = nome;
+            txtSobrenome.Text = sobrenome;
+            txtGenero.Text = descricaoGenero;
+            dtpNascimento.Value = dataNascimento;
+            txtEndereco.Text = endereco;
+            txtNumero.Text = numero;
+            mtbCep.Text = cep;
+            txtBairro.Text = bairro;
         }
 
         private void Cadastro_Load(object sender, EventArgs e)
@@ -36,7 +57,7 @@ namespace DesafioCRUD.View
                 Endereco = txtEndereco.Text,
                 Numero = txtNumero.Text,
                 Cep = mtbCep.Text,
-                Bairro = txtBairro.Text,
+                Bairro = txtBairro.Text
             };
 
             new ClienteRepository().CadastrarCliente(novoCadastro);
@@ -54,6 +75,32 @@ namespace DesafioCRUD.View
             txtNumero.Text = string.Empty;
             mtbCep.Text = string.Empty;
             txtBairro.Text = string.Empty;
+        }
+
+        private void FecharFormulario()
+        {
+            this.Close();
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            new GeneroRepository().CadastrarGenero(txtGenero.Text);
+            var generoId = new GeneroRepository().BuscarGeneroId(txtGenero.Text);
+            var edicaoCadastro = new Cliente
+            {
+                Id = Convert.ToInt32(txtCod.Text),
+                Nome = txtNome.Text,
+                Sobrenome = txtSobrenome.Text,
+                GeneroId = generoId,
+                DataNascimento = dtpNascimento.Value,
+                Endereco = txtEndereco.Text,
+                Numero = txtNumero.Text,
+                Cep = mtbCep.Text,
+                Bairro = txtBairro.Text
+            };
+
+            new ClienteRepository().EditarCliente(edicaoCadastro);
+            FecharFormulario();
         }
     }
 }

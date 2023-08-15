@@ -46,6 +46,9 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            btnSalvar = new Button();
+            lblCod = new Label();
+            txtCod = new TextBox();
             SuspendLayout();
             // 
             // btnListagem
@@ -137,7 +140,7 @@
             // txtSobrenome
             // 
             txtSobrenome.CharacterCasing = CharacterCasing.Upper;
-            txtSobrenome.Location = new Point(161, 96);
+            txtSobrenome.Location = new Point(161, 95);
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.Size = new Size(193, 23);
             txtSobrenome.TabIndex = 25;
@@ -189,7 +192,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(27, 99);
+            label2.Location = new Point(27, 98);
             label2.Name = "label2";
             label2.Size = new Size(68, 15);
             label2.TabIndex = 19;
@@ -204,11 +207,43 @@
             label1.TabIndex = 18;
             label1.Text = "Nome";
             // 
+            // btnSalvar
+            // 
+            btnSalvar.Location = new Point(299, 233);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(95, 35);
+            btnSalvar.TabIndex = 36;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.Visible = false;
+            btnSalvar.Click += btnSalvar_Click;
+            // 
+            // lblCod
+            // 
+            lblCod.AutoSize = true;
+            lblCod.Location = new Point(27, 24);
+            lblCod.Name = "lblCod";
+            lblCod.Size = new Size(32, 15);
+            lblCod.TabIndex = 37;
+            lblCod.Text = "Cód.";
+            lblCod.Visible = false;
+            // 
+            // txtCod
+            // 
+            txtCod.Location = new Point(161, 21);
+            txtCod.Name = "txtCod";
+            txtCod.Size = new Size(74, 23);
+            txtCod.TabIndex = 38;
+            txtCod.Visible = false;
+            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(689, 314);
+            Controls.Add(txtCod);
+            Controls.Add(lblCod);
+            Controls.Add(btnSalvar);
             Controls.Add(btnListagem);
             Controls.Add(btnCadastrar);
             Controls.Add(label8);
@@ -255,5 +290,8 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Button btnSalvar;
+        private Label lblCod;
+        private TextBox txtCod;
     }
 }
