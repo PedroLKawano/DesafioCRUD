@@ -40,6 +40,7 @@
             btnFiltrar = new Button();
             btnEditar = new Button();
             btnEliminar = new Button();
+            btnNovoCadastro = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
             SuspendLayout();
             // 
@@ -48,6 +49,7 @@
             dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvDados.Location = new Point(33, 170);
             dgvDados.Name = "dgvDados";
+            dgvDados.ReadOnly = true;
             dgvDados.RowTemplate.Height = 25;
             dgvDados.Size = new Size(666, 206);
             dgvDados.TabIndex = 0;
@@ -147,12 +149,24 @@
             btnEliminar.TabIndex = 11;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // btnNovoCadastro
+            // 
+            btnNovoCadastro.Location = new Point(318, 396);
+            btnNovoCadastro.Name = "btnNovoCadastro";
+            btnNovoCadastro.Size = new Size(95, 35);
+            btnNovoCadastro.TabIndex = 12;
+            btnNovoCadastro.Text = "Novo Cadastro";
+            btnNovoCadastro.UseVisualStyleBackColor = true;
+            btnNovoCadastro.Click += btnNovoCadastro_Click;
             // 
             // Listagem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(730, 453);
+            ClientSize = new Size(731, 458);
+            Controls.Add(btnNovoCadastro);
             Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnFiltrar);
@@ -187,5 +201,6 @@
         private Button btnFiltrar;
         private Button btnEditar;
         private Button btnEliminar;
+        private Button btnNovoCadastro;
     }
 }

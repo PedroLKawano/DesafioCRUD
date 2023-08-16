@@ -17,7 +17,6 @@ namespace DesafioCRUD.View
             this.Text = "Edição";
             lblCod.Visible = true;
             txtCod.Visible = true;
-            btnListagem.Visible = false;
             btnCadastrar.Visible = false;
             btnSalvar.Visible = true;
 
@@ -30,18 +29,6 @@ namespace DesafioCRUD.View
             txtNumero.Text = numero;
             mtbCep.Text = cep;
             txtBairro.Text = bairro;
-        }
-
-        private void Cadastro_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnListagem_Click(object sender, EventArgs e)
-        {
-            var form = new Listagem();
-
-            form.ShowDialog();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

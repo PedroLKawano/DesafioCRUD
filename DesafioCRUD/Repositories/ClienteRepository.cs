@@ -34,7 +34,7 @@ namespace DesafioCRUD.Repositories
                     if (!string.IsNullOrEmpty(descricaoGenero))
                         consulta += " AND g.Descricao LIKE @Descricao";
 
-                    return conexao.Query<ClienteGenero>(consulta + " ORDER BY c.Nome",
+                    return conexao.Query<ClienteGenero>(consulta + " AND ELIMINADO = 0 ORDER BY c.Nome",
                         new
                         {
                             Codigo = codigo,
@@ -111,7 +111,22 @@ namespace DesafioCRUD.Repositories
                 MessageBox.Show(ex.Message);
             }
         }
-    
-    
+
+        public void EliminarCliente(int id)
+        {
+            try
+            {
+                using (var conexao = ConexaoSql.ObterConexao())
+                {
+                    conexao.Open();
+                    conexao.Execute("UPDATE [Cliente] SET Eliminado = 1 WHERE Id = @Id", new { Id = id });
+                }
+                MessageBox.Show("Cliente eliminado com sucesso.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -23,9 +23,9 @@ namespace DesafioCRUD.View
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
-        {            
+        {
             if (dgvDados.SelectedRows.Count > 0)
-            {                
+            {
                 var dadosCliente = dgvDados.SelectedRows[0].DataBoundItem as ClienteGenero;
                 var dadosCadastro = new Cadastro();
 
@@ -40,9 +40,28 @@ namespace DesafioCRUD.View
                     dadosCliente.Cep,
                     dadosCliente.Bairro
                     );
-                
-                dadosCadastro.ShowDialog();                
+
+                dadosCadastro.ShowDialog();
+
+                btnFiltrar_Click( sender, e );
             }
+        }
+
+        private void btnNovoCadastro_Click(object sender, EventArgs e)
+        {
+            var formulario = new Cadastro();
+            formulario.ShowDialog();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            var idCliente = Convert.ToInt32(dgvDados.SelectedRows[0].Cells["Id"].Value);
+            var cliente = new ClienteRepository();
+
+            if (MessageBox.Show("Tem certeza que deseja eliminar este cliente?", "Confirmar Eliminação", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                cliente.EliminarCliente(idCliente);
+
+            btnFiltrar_Click(sender, e);
         }
     }
 }

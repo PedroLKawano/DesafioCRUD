@@ -8,7 +8,7 @@ namespace DesafioCRUD
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Cadastro());
+            Application.Run(new Listagem());
         }
     }
 }

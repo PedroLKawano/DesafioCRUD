@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnListagem = new Button();
             btnCadastrar = new Button();
             label8 = new Label();
             txtBairro = new TextBox();
@@ -49,17 +48,8 @@
             btnSalvar = new Button();
             lblCod = new Label();
             txtCod = new TextBox();
+            btnCancelar = new Button();
             SuspendLayout();
-            // 
-            // btnListagem
-            // 
-            btnListagem.Location = new Point(27, 233);
-            btnListagem.Name = "btnListagem";
-            btnListagem.Size = new Size(95, 35);
-            btnListagem.TabIndex = 35;
-            btnListagem.Text = "Listar";
-            btnListagem.UseVisualStyleBackColor = true;
-            btnListagem.Click += btnListagem_Click;
             // 
             // btnCadastrar
             // 
@@ -209,7 +199,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(299, 233);
+            btnSalvar.Location = new Point(562, 233);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(95, 35);
             btnSalvar.TabIndex = 36;
@@ -232,20 +222,30 @@
             // 
             txtCod.Location = new Point(161, 21);
             txtCod.Name = "txtCod";
+            txtCod.ReadOnly = true;
             txtCod.Size = new Size(74, 23);
             txtCod.TabIndex = 38;
             txtCod.Visible = false;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.Location = new Point(27, 233);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(95, 35);
+            btnCancelar.TabIndex = 39;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Visible = false;
             // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(689, 314);
+            Controls.Add(btnCadastrar);
+            Controls.Add(btnCancelar);
             Controls.Add(txtCod);
             Controls.Add(lblCod);
-            Controls.Add(btnSalvar);
-            Controls.Add(btnListagem);
-            Controls.Add(btnCadastrar);
             Controls.Add(label8);
             Controls.Add(txtBairro);
             Controls.Add(mtbCep);
@@ -262,17 +262,15 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(btnSalvar);
             Name = "Cadastro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
-            Load += Cadastro_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button btnListagem;
         private Button btnCadastrar;
         private Label label8;
         private TextBox txtBairro;
@@ -293,5 +291,6 @@
         private Button btnSalvar;
         private Label lblCod;
         private TextBox txtCod;
+        private Button btnCancelar;
     }
 }
