@@ -68,8 +68,7 @@ namespace DesafioCRUD.Repositories
                         cep = cliente.Cep.Replace("-",string.Empty),
                         bairro = cliente.Bairro
                     });
-                }
-                MessageBox.Show("Cliente cadastrado com sucesso.");
+                }                
             }    
             catch (Exception ex)
             {
@@ -98,8 +97,6 @@ namespace DesafioCRUD.Repositories
                             Bairro = cliente.Bairro
                         });
                 }
-
-                MessageBox.Show("Edição realizada com sucesso.");
             }
             catch (Exception ex)
             {
@@ -115,7 +112,6 @@ namespace DesafioCRUD.Repositories
                 {
                     conexao.Execute("UPDATE [Cliente] SET Eliminado = 1 WHERE Id = @Id", new { Id = id });
                 }
-                MessageBox.Show("Cliente eliminado com sucesso.");
             }
             catch (Exception ex)
             {

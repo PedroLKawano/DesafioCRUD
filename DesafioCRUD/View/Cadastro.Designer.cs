@@ -262,7 +262,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(689, 314);
-            Controls.Add(btnSalvar);
             Controls.Add(btnCadastrar);
             Controls.Add(btnCancelar);
             Controls.Add(txtCod);
@@ -283,6 +282,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(btnSalvar);
             Name = "Cadastro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
