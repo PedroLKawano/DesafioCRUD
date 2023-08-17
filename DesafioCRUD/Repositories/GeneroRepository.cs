@@ -8,7 +8,6 @@ namespace DesafioCRUD.Repositories
         {
             using (var conexao = ConexaoSql.ObterConexao())
             {
-                conexao.Open();
                 var generoId = conexao.QueryFirstOrDefault<int>("SELECT Id FROM [Genero] WHERE Descricao = @Descricao", new { Descricao = descricao });
 
                 if (generoId == 0)
@@ -19,8 +18,6 @@ namespace DesafioCRUD.Repositories
         {
             using (var conexao = ConexaoSql.ObterConexao())
             {
-                conexao.Open();
-
                 return conexao.QueryFirstOrDefault<int>("SELECT Id FROM [Genero] WHERE Descricao = @Descricao", new { Descricao = descricao });
             }
         }

@@ -37,22 +37,25 @@
             txtNome = new TextBox();
             txtIdade = new TextBox();
             txtGenero = new TextBox();
-            btnFiltrar = new Button();
-            btnEditar = new Button();
-            btnEliminar = new Button();
-            btnNovoCadastro = new Button();
+            btnEliminar = new FontAwesome.Sharp.IconButton();
+            btnFiltrar = new FontAwesome.Sharp.IconButton();
+            btnEditar = new FontAwesome.Sharp.IconButton();
+            btnNovoCadastro = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)dgvDados).BeginInit();
             SuspendLayout();
             // 
             // dgvDados
             // 
+            dgvDados.BackgroundColor = SystemColors.ControlLight;
             dgvDados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvDados.Location = new Point(33, 170);
+            dgvDados.Location = new Point(33, 177);
+            dgvDados.MultiSelect = false;
             dgvDados.Name = "dgvDados";
             dgvDados.ReadOnly = true;
             dgvDados.RowTemplate.Height = 25;
-            dgvDados.Size = new Size(666, 206);
-            dgvDados.TabIndex = 0;
+            dgvDados.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvDados.Size = new Size(667, 206);
+            dgvDados.TabIndex = 6;
             // 
             // label1
             // 
@@ -96,7 +99,7 @@
             txtCod.Location = new Point(84, 37);
             txtCod.Name = "txtCod";
             txtCod.Size = new Size(77, 23);
-            txtCod.TabIndex = 5;
+            txtCod.TabIndex = 1;
             // 
             // txtNome
             // 
@@ -104,14 +107,14 @@
             txtNome.Location = new Point(84, 64);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(227, 23);
-            txtNome.TabIndex = 6;
+            txtNome.TabIndex = 2;
             // 
             // txtIdade
             // 
             txtIdade.Location = new Point(84, 93);
             txtIdade.Name = "txtIdade";
             txtIdade.Size = new Size(77, 23);
-            txtIdade.TabIndex = 7;
+            txtIdade.TabIndex = 3;
             // 
             // txtGenero
             // 
@@ -119,57 +122,87 @@
             txtGenero.Location = new Point(84, 123);
             txtGenero.Name = "txtGenero";
             txtGenero.Size = new Size(227, 23);
-            txtGenero.TabIndex = 8;
+            txtGenero.TabIndex = 4;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.BackColor = Color.LightCoral;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            btnEliminar.IconColor = Color.DimGray;
+            btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEliminar.IconSize = 25;
+            btnEliminar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEliminar.Location = new Point(568, 396);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(131, 50);
+            btnEliminar.TabIndex = 10;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnFiltrar
             // 
-            btnFiltrar.Location = new Point(604, 116);
+            btnFiltrar.BackColor = Color.SkyBlue;
+            btnFiltrar.FlatStyle = FlatStyle.Flat;
+            btnFiltrar.IconChar = FontAwesome.Sharp.IconChar.List;
+            btnFiltrar.IconColor = Color.DimGray;
+            btnFiltrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnFiltrar.IconSize = 25;
+            btnFiltrar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFiltrar.Location = new Point(569, 114);
             btnFiltrar.Name = "btnFiltrar";
-            btnFiltrar.Size = new Size(95, 35);
-            btnFiltrar.TabIndex = 9;
+            btnFiltrar.Size = new Size(131, 50);
+            btnFiltrar.TabIndex = 11;
             btnFiltrar.Text = "Filtrar";
-            btnFiltrar.UseVisualStyleBackColor = true;
+            btnFiltrar.UseVisualStyleBackColor = false;
             btnFiltrar.Click += btnFiltrar_Click;
             // 
             // btnEditar
             // 
+            btnEditar.BackColor = Color.Khaki;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.IconChar = FontAwesome.Sharp.IconChar.Pen;
+            btnEditar.IconColor = Color.Gray;
+            btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnEditar.IconSize = 25;
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
             btnEditar.Location = new Point(33, 396);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(95, 35);
-            btnEditar.TabIndex = 10;
+            btnEditar.RightToLeft = RightToLeft.No;
+            btnEditar.Size = new Size(131, 50);
+            btnEditar.TabIndex = 12;
             btnEditar.Text = "Editar";
-            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.UseVisualStyleBackColor = false;
             btnEditar.Click += btnEditar_Click;
-            // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(604, 396);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(95, 35);
-            btnEliminar.TabIndex = 11;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnNovoCadastro
             // 
-            btnNovoCadastro.Location = new Point(318, 396);
+            btnNovoCadastro.BackColor = Color.YellowGreen;
+            btnNovoCadastro.FlatStyle = FlatStyle.Flat;
+            btnNovoCadastro.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            btnNovoCadastro.IconColor = Color.DimGray;
+            btnNovoCadastro.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnNovoCadastro.IconSize = 20;
+            btnNovoCadastro.ImageAlign = ContentAlignment.MiddleLeft;
+            btnNovoCadastro.Location = new Point(300, 396);
             btnNovoCadastro.Name = "btnNovoCadastro";
-            btnNovoCadastro.Size = new Size(95, 35);
-            btnNovoCadastro.TabIndex = 12;
+            btnNovoCadastro.Size = new Size(131, 50);
+            btnNovoCadastro.TabIndex = 13;
             btnNovoCadastro.Text = "Novo Cadastro";
-            btnNovoCadastro.UseVisualStyleBackColor = true;
+            btnNovoCadastro.UseVisualStyleBackColor = false;
             btnNovoCadastro.Click += btnNovoCadastro_Click;
             // 
             // Listagem
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             ClientSize = new Size(731, 458);
             Controls.Add(btnNovoCadastro);
-            Controls.Add(btnEliminar);
             Controls.Add(btnEditar);
             Controls.Add(btnFiltrar);
+            Controls.Add(btnEliminar);
             Controls.Add(txtGenero);
             Controls.Add(txtIdade);
             Controls.Add(txtNome);
@@ -198,9 +231,9 @@
         private TextBox txtNome;
         private TextBox txtIdade;
         private TextBox txtGenero;
-        private Button btnFiltrar;
-        private Button btnEditar;
-        private Button btnEliminar;
-        private Button btnNovoCadastro;
+        private FontAwesome.Sharp.IconButton btnEliminar;
+        private FontAwesome.Sharp.IconButton btnFiltrar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnNovoCadastro;
     }
 }

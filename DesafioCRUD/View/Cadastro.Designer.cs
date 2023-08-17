@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCadastrar = new Button();
             label8 = new Label();
             txtBairro = new TextBox();
             mtbCep = new MaskedTextBox();
@@ -45,21 +44,12 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            btnSalvar = new Button();
             lblCod = new Label();
             txtCod = new TextBox();
-            btnCancelar = new Button();
+            btnCancelar = new FontAwesome.Sharp.IconButton();
+            btnCadastrar = new FontAwesome.Sharp.IconButton();
+            btnSalvar = new FontAwesome.Sharp.IconButton();
             SuspendLayout();
-            // 
-            // btnCadastrar
-            // 
-            btnCadastrar.Location = new Point(562, 233);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.Size = new Size(95, 35);
-            btnCadastrar.TabIndex = 34;
-            btnCadastrar.Text = "Cadastrar";
-            btnCadastrar.UseVisualStyleBackColor = true;
-            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // label8
             // 
@@ -76,7 +66,7 @@
             txtBairro.Location = new Point(464, 168);
             txtBairro.Name = "txtBairro";
             txtBairro.Size = new Size(193, 23);
-            txtBairro.TabIndex = 32;
+            txtBairro.TabIndex = 9;
             // 
             // mtbCep
             // 
@@ -84,7 +74,7 @@
             mtbCep.Mask = "99999-999";
             mtbCep.Name = "mtbCep";
             mtbCep.Size = new Size(100, 23);
-            mtbCep.TabIndex = 31;
+            mtbCep.TabIndex = 8;
             // 
             // txtNumero
             // 
@@ -92,7 +82,7 @@
             txtNumero.Location = new Point(464, 96);
             txtNumero.Name = "txtNumero";
             txtNumero.Size = new Size(100, 23);
-            txtNumero.TabIndex = 30;
+            txtNumero.TabIndex = 7;
             // 
             // label7
             // 
@@ -109,7 +99,7 @@
             txtEndereco.Location = new Point(464, 57);
             txtEndereco.Name = "txtEndereco";
             txtEndereco.Size = new Size(193, 23);
-            txtEndereco.TabIndex = 28;
+            txtEndereco.TabIndex = 6;
             // 
             // dtpNascimento
             // 
@@ -117,7 +107,7 @@
             dtpNascimento.Location = new Point(161, 168);
             dtpNascimento.Name = "dtpNascimento";
             dtpNascimento.Size = new Size(101, 23);
-            dtpNascimento.TabIndex = 27;
+            dtpNascimento.TabIndex = 5;
             // 
             // txtGenero
             // 
@@ -125,7 +115,7 @@
             txtGenero.Location = new Point(161, 132);
             txtGenero.Name = "txtGenero";
             txtGenero.Size = new Size(193, 23);
-            txtGenero.TabIndex = 26;
+            txtGenero.TabIndex = 4;
             // 
             // txtSobrenome
             // 
@@ -133,7 +123,7 @@
             txtSobrenome.Location = new Point(161, 95);
             txtSobrenome.Name = "txtSobrenome";
             txtSobrenome.Size = new Size(193, 23);
-            txtSobrenome.TabIndex = 25;
+            txtSobrenome.TabIndex = 3;
             // 
             // txtNome
             // 
@@ -141,7 +131,7 @@
             txtNome.Location = new Point(161, 57);
             txtNome.Name = "txtNome";
             txtNome.Size = new Size(193, 23);
-            txtNome.TabIndex = 24;
+            txtNome.TabIndex = 2;
             // 
             // label6
             // 
@@ -197,17 +187,6 @@
             label1.TabIndex = 18;
             label1.Text = "Nome";
             // 
-            // btnSalvar
-            // 
-            btnSalvar.Location = new Point(562, 233);
-            btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(95, 35);
-            btnSalvar.TabIndex = 36;
-            btnSalvar.Text = "Salvar";
-            btnSalvar.UseVisualStyleBackColor = true;
-            btnSalvar.Visible = false;
-            btnSalvar.Click += btnSalvar_Click;
-            // 
             // lblCod
             // 
             lblCod.AutoSize = true;
@@ -224,24 +203,66 @@
             txtCod.Name = "txtCod";
             txtCod.ReadOnly = true;
             txtCod.Size = new Size(74, 23);
-            txtCod.TabIndex = 38;
+            txtCod.TabIndex = 1;
             txtCod.Visible = false;
             // 
             // btnCancelar
             // 
+            btnCancelar.BackColor = Color.LightCoral;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Cancel;
+            btnCancelar.IconColor = Color.DimGray;
+            btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCancelar.IconSize = 30;
+            btnCancelar.ImageAlign = ContentAlignment.MiddleLeft;
             btnCancelar.Location = new Point(27, 233);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(95, 35);
-            btnCancelar.TabIndex = 39;
+            btnCancelar.Size = new Size(131, 50);
+            btnCancelar.TabIndex = 38;
             btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Visible = false;
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnCadastrar
+            // 
+            btnCadastrar.BackColor = Color.YellowGreen;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.IconChar = FontAwesome.Sharp.IconChar.PlusCircle;
+            btnCadastrar.IconColor = Color.DimGray;
+            btnCadastrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnCadastrar.IconSize = 20;
+            btnCadastrar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnCadastrar.Location = new Point(526, 233);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(131, 50);
+            btnCadastrar.TabIndex = 39;
+            btnCadastrar.Text = "Cadastrar";
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // btnSalvar
+            // 
+            btnSalvar.BackColor = Color.YellowGreen;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.IconChar = FontAwesome.Sharp.IconChar.FloppyDisk;
+            btnSalvar.IconColor = Color.DimGray;
+            btnSalvar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            btnSalvar.IconSize = 30;
+            btnSalvar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSalvar.Location = new Point(526, 233);
+            btnSalvar.Name = "btnSalvar";
+            btnSalvar.Size = new Size(131, 50);
+            btnSalvar.TabIndex = 40;
+            btnSalvar.Text = "Salvar";
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(689, 314);
+            Controls.Add(btnSalvar);
             Controls.Add(btnCadastrar);
             Controls.Add(btnCancelar);
             Controls.Add(txtCod);
@@ -262,7 +283,6 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(btnSalvar);
             Name = "Cadastro";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro";
@@ -271,7 +291,6 @@
         }
 
         #endregion
-        private Button btnCadastrar;
         private Label label8;
         private TextBox txtBairro;
         private MaskedTextBox mtbCep;
@@ -288,9 +307,10 @@
         private Label label3;
         private Label label2;
         private Label label1;
-        private Button btnSalvar;
         private Label lblCod;
         private TextBox txtCod;
-        private Button btnCancelar;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private FontAwesome.Sharp.IconButton btnCadastrar;
+        private FontAwesome.Sharp.IconButton btnSalvar;
     }
 }

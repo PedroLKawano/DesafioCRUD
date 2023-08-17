@@ -89,5 +89,10 @@ namespace DesafioCRUD.View
             new ClienteRepository().EditarCliente(edicaoCadastro);
             FecharFormulario();
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

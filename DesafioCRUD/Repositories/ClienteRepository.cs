@@ -11,8 +11,6 @@ namespace DesafioCRUD.Repositories
             {
                 using (var conexao = ConexaoSql.ObterConexao())
                 {
-                    conexao.Open();
-
                     string consulta = @"SELECT c.Id, c.Nome, c.Sobrenome, g.Descricao AS DescricaoGenero, c.DataNascimento, c.Endereco, c.Numero, c.Cep, c.Bairro
                     FROM [CLIENTE] C INNER JOIN [GENERO] G ON c.GeneroId = g.Id";
 
@@ -58,7 +56,6 @@ namespace DesafioCRUD.Repositories
             {
                 using (var conexao = ConexaoSql.ObterConexao())
                 {
-                    conexao.Open();
                     conexao.Execute(@"INSERT INTO [CLIENTE] (Nome, Sobrenome, GeneroId, DataNascimento, Endereco, Numero, Cep, Bairro)
                     VALUES (@Nome, @Sobrenome, @GeneroId, @DataNascimento, @Endereco, @Numero, @Cep, @Bairro)",
                     new{
@@ -86,8 +83,6 @@ namespace DesafioCRUD.Repositories
             {
                 using (var conexao = ConexaoSql.ObterConexao())
                 {
-                    conexao.Open();
-
                     conexao.Execute("UPDATE [Cliente] SET Nome = @Nome, Sobrenome = @Sobrenome, GeneroId = @GeneroId," +
                         "DataNascimento = @DataNascimento, Endereco = @Endereco, Numero = @Numero, Cep = @Cep, Bairro = @Bairro WHERE Id = @Id",
                         new
@@ -118,7 +113,6 @@ namespace DesafioCRUD.Repositories
             {
                 using (var conexao = ConexaoSql.ObterConexao())
                 {
-                    conexao.Open();
                     conexao.Execute("UPDATE [Cliente] SET Eliminado = 1 WHERE Id = @Id", new { Id = id });
                 }
                 MessageBox.Show("Cliente eliminado com sucesso.");

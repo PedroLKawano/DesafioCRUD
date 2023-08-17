@@ -43,7 +43,7 @@ namespace DesafioCRUD.View
 
                 dadosCadastro.ShowDialog();
 
-                btnFiltrar_Click( sender, e );
+                btnFiltrar_Click(sender, e);
             }
         }
 
