@@ -99,6 +99,11 @@ namespace DesafioCRUD.View
                 MessageBox.Show("A data de nascimento não pode ser maior ou igual que a data atual.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
+            else if (mtbCep.Text.Length < 9)
+            {
+                MessageBox.Show("O CEP deve ter 8 dígitos.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             return true;
         }
 
